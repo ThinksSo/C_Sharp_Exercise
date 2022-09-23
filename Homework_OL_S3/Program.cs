@@ -71,15 +71,30 @@ void Task21_2()
 }
 
 
-
 /*
 Задача 23 Напишите программу, которая принимает на вход число (N) 
 и выдаёт таблицу кубов чисел от 1 до N.
-3 -> 1, 8, 27; 5 -> 1, 8, 27, 64, 125
 */
+
+void Task23()
+{
+    Console.WriteLine("\n \t Task 23: Third power");
+    Console.Write("Enter number: ");
+    int num = Convert.ToInt32(Console.ReadLine());
+    int count = 1;
+
+    while (count < num+1)
+    {
+        Console.WriteLine($"{count} * {count} * {count} = {Math.Pow(count, 3)}");
+        count++;
+    }
+
+}
+
 
 Task19();
 Task21();
 Task21_2();
+Task23();
 Console.WriteLine();
 
