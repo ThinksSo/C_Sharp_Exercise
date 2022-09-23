@@ -42,19 +42,35 @@ A (3,6,8); B (2,1,-7), -> 15.84: A (7,-5, 0); B (1,-1,9) -> 11.53
 void Task21()
 {
     Console.WriteLine("\n \t Task 21: Line lenght in 3D");
-    Random random = new Random();
-    int 
-    xA = random.Next(0, 100),
-    yA = random.Next(0, 100),
-    zA = random.Next(0, 100),
-    xB = random.Next(0, 100),
-    yB = random.Next(0, 100),
-    zB = random.Next(0, 100);
+    Console.Write("Enter A(x): "); int xA = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Enter A(y): "); int yA = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Enter A(z): "); int zA = Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Enter B(x): "); int xB = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Enter B(y): "); int yB = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Enter B(z): "); int zB = Convert.ToInt32(Console.ReadLine());
+
 
     double lenght = Math.Sqrt(Math.Pow((xB - xA),2) + Math.Pow((yB - yA),2) + Math.Pow((zB - zA),2));
     Console.WriteLine($" A({xA}, {yA}, {zA}); B({xB}, {yB}, {zB}) lenght = {lenght}) ");
 
-  }
+
+}
+
+ // Option II
+void Task21_2()
+{
+    Console.WriteLine("\n \t Task 21 - 2: Random line lenght in 3D");
+   
+    Random random = new Random();
+    int xA = random.Next(0, 100), yA = random.Next(0, 100), zA = random.Next(0, 100),
+    xB = random.Next(0, 100), yB = random.Next(0, 100), zB = random.Next(0, 100);
+
+    double lenght = Math.Sqrt(Math.Pow((xB - xA),2) + Math.Pow((yB - yA),2) + Math.Pow((zB - zA),2));
+    Console.WriteLine($" A({xA}, {yA}, {zA}); B({xB}, {yB}, {zB}) lenght = {lenght}) ");
+}
+
+
 
 /*
 Задача 23 Напишите программу, которая принимает на вход число (N) 
@@ -62,7 +78,8 @@ void Task21()
 3 -> 1, 8, 27; 5 -> 1, 8, 27, 64, 125
 */
 
-//Task19();
+Task19();
 Task21();
+Task21_2();
 Console.WriteLine();
 
