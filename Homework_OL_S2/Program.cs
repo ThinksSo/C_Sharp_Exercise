@@ -28,12 +28,19 @@ void Task13()
     // 645 -> 5; 78 -> третьей цифры нет; 32679 -> 6
 
     Console.WriteLine("\n Task 13");
-    if (num > 999) Console. WriteLine("invalid input");
-    else if (num < 100) Console. WriteLine($"{num} -> no third digit");
+    num = Math.Abs(num);
+    
+    if (num > 99) 
+    {
+        while(num > 999)
+        {
+            num /= 10;
+        }
+        Console.WriteLine($"{num} -> {num%10}"); 
+    }
     else
     {
-        int third = num%10;
-        Console.WriteLine($"{num} -> {third}"); 
+        Console. WriteLine($"{num} -> no third digit");
     }
 }
 
