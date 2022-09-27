@@ -91,10 +91,26 @@ void Task23()
 
 }
 
+void Task232()
+{
+    Console.WriteLine("\n \t Task 23: Third power");
+    Console.Write("Enter number: ");
+    int num = Convert.ToInt32(Console.ReadLine());
+    
+    for (int i = 1; i <= num; i++)
+    {
+        Console.WriteLine($"{i} * {i} * {i} = {Math.Pow(i, 3)}");
+    }
+
+}
+
+
+
 
 Task19();
 Task21();
 Task21_2();
 Task23();
+Task232();
 Console.WriteLine();
 
