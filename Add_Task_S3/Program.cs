@@ -28,12 +28,14 @@ void Task8()
 */
 void Task9()
 {
+    Console.WriteLine();
     int result = 1;
+    int min = 2, max = 9;
     while (result < 1000)
     {
         Console.Write("Player 1. Enter a number from 1 to 9: ");
         int num1 = Convert.ToInt32(Console.ReadLine());
-        if (num1 < 2 || num1 > 9)
+        while (num1 < min || num1 > max)
         {
             Console.Write("Invalid input. Player 1. Re-enter the number: ");
             num1 = Convert.ToInt32(Console.ReadLine());
@@ -45,7 +47,7 @@ void Task9()
         {
             Console.Write("Player 2. Enter a number from 1 to 9: ");
             int num2 = Convert.ToInt32(Console.ReadLine());
-            if (num2 < 2 || num2 > 9)
+            while (num2 < min || num2 > max)
             {
                 Console.Write("Invalid input. Player 2. Re-enter the number: ");
                 num2 = Convert.ToInt32(Console.ReadLine());
@@ -60,6 +62,6 @@ void Task9()
 }
 
 
-Task8();
+// Task8();
 Task9();
 
