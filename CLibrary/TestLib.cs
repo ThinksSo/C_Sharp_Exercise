@@ -1,4 +1,4 @@
-static void Test4Lib()
+void Test4Lib()
 {
     int size = 10;
     int[] newArr = new int [size];
