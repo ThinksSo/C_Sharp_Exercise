@@ -19,7 +19,7 @@ void Task41()
         if (num > 0) sum++;
         numbers[i] = num;
     }
-    Console.Write("\n In ");
+    Console.WriteLine();
     PrintArray(numbers);
     Console.WriteLine($"numbers > 0 -> {sum} \n");
 }
@@ -42,8 +42,8 @@ void Task43()
     Console.Write("Enter k2: ");
     double k2 = Convert.ToDouble(Console.ReadLine());
 
-    double x = (b2 - b1) / (k1 - k2);
-    double y = k1 * x + b1;
+    double x = Math.Round((b2 - b1) / (k1 - k2), 2);
+    double y = Math.Round(k1 * x + b1, 2);
 
     Console.WriteLine($"\n y = {k1}x + {b1}, y = {k2}x + {b2}");
     Console.WriteLine($" ->  (x, y) = ({x}; {y}) \n");
@@ -60,5 +60,5 @@ void PrintArray(int[] numbers)
     Console.WriteLine();
 }
 
-// Task41();
+Task41();
 Task43();

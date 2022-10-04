@@ -1,21 +1,24 @@
-﻿// Задача 8. Напишите программу, который выводит на консоль таблицу умножения от 1 до n, 
-// где n задаётся случайно от 2 до 100.
+﻿// SEMINAR 3
 
+// Задача 8. Напишите программу, который выводит на консоль таблицу умножения от 1 до n, 
+// где n задаётся случайно от 2 до 100.
 void Task8()
 {
+    Console.WriteLine();
     Random random = new Random();
     int num = random.Next(2, 100);
     int count = 2;
 
-    while (count < num+1)
+    while (count < num + 1)
     {
-        for (int i=1; i <= num; i++)
+        for (int i = 1; i <= num; i++)
         {
             Console.WriteLine($"{count} * {i} = {i * count}");
         }
         Console.WriteLine();
         count++;
     }
+    Console.WriteLine();
 }
 
 
@@ -54,14 +57,32 @@ void Task9()
             }
             Console.WriteLine($"{result} * {num2} = {result * num2}");
             result = result * num2;
-            if (result >= 1000) Console.WriteLine($"\n Player 2 Win!"); 
-        }  
+            if (result >= 1000) Console.WriteLine($"\n Player 2 Win!");
+        }
         Console.WriteLine();
     }
 
 }
 
 
+// SEMINAR 5
+
+/* Задача 1. Задан массив из случайных цифр на 15 элементов. 
+На вход подаётся трёхзначное натуральное число. 
+Напишите программу, которая определяет, есть в массиве последовательность из трёх элементов, 
+совпадающая с введённым числом.
+{0, 5, 6, 2, 7, 7, 8, 1, 1, 9} - 277 -> да
+{4, 4, 3, 6, 7, 0, 8, 5, 1, 2} - 812 -> нет
+*/
+
+void Decompose();
+int num = 100;
+while (num > 0)
+{
+    
+}
+
+
 // Task8();
-Task9();
+// Task9();
 
