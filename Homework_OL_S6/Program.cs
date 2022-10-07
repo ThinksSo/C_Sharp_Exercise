@@ -49,6 +49,19 @@ void Task43()
     Console.WriteLine($" ->  (x, y) = ({x}; {y}) \n");
 }
 
+void Task43_2()
+{
+    Console.WriteLine("\n \t Task 43-2: Crossing lines");
+
+    var (k1, b1) = (1, 4);
+    var (k2, b2) = (5, -3);
+    double x = Convert.ToDouble(b2 - b1) / Convert.ToDouble(k1 - k2);
+    x = Math.Round(x, 2);
+    double y = k1 * x + b1;
+    y = Math.Round(y, 2);
+    Console.WriteLine($"{x}, {y} \n");
+}
+
 
 void PrintArray(int[] numbers)
 {
@@ -60,5 +73,7 @@ void PrintArray(int[] numbers)
     Console.WriteLine();
 }
 
+
 Task41();
 Task43();
+Task43_2();

@@ -4,6 +4,7 @@
 // где n задаётся случайно от 2 до 100.
 void Task8()
 {
+    Console.WriteLine("\n \t Task 8: Multiplication table");
     Console.WriteLine();
     Random random = new Random();
     int num = random.Next(2, 100);
@@ -31,6 +32,7 @@ void Task8()
 */
 void Task9()
 {
+    Console.WriteLine("\n \t Task 9: Game for 2 players - Multiply up to 1000");
     Console.WriteLine();
     int result = 1;
     int min = 2, max = 9;
@@ -75,14 +77,12 @@ void Task9()
 {4, 4, 3, 6, 7, 0, 8, 5, 1, 2} - 812 -> нет
 */
 
-void Decompose();
-int num = 100;
-while (num > 0)
+void Decompose()
 {
     
 }
 
 
-// Task8();
-// Task9();
+Task8();
+Task9();
 
