@@ -38,6 +38,8 @@ void Task54()
     Console.WriteLine();
 }
 
+
+
 /* Задача 56: Задайте прямоугольный двумерный массив. 
 Напишите программу, которая будет находить строку с наименьшей суммой элементов.
 Например, задан массив:
@@ -100,7 +102,7 @@ int SumRowArray(int[,] numbers, int rowIndex = 0)
 */
 void Task58()
 {
-    Console.WriteLine("\n \t Task 58: Spiral array\n");
+    Console.WriteLine("\n \t Task 58: Spiral array \n");
     int size = 4;
     int[,] spiral = new int[size, size];
 
@@ -135,6 +137,46 @@ void FillArraySpiral(int[,] numbers)
 
 }
 
+// Заполнение любого прямоугольного массива по спирали
+void Task58_2()
+{
+    Console.WriteLine("\n \t Task 58 - 2: Spiral array \n");
+    int rows = 5;
+    int columns = 6;
+    int[,] numbers = new int[rows, columns];
+
+    int index = 0;
+    int currentRow = 0;
+    int currentColumn = 0;
+
+    int changeIndexRow = 0;
+    int changeIndexColumn = 1;
+
+    int steps = columns;
+    int turn = 0;
+
+    while (index < numbers.Length)
+    {
+        numbers[currentRow, currentColumn] = index + 1;
+        // Console.Write(numbers[currentRow, currentColumn] + " ");
+        index++;
+        steps--;
+
+        if (steps == 0)
+        {
+            steps = rows * ((turn + 1)%2) + columns * (turn % 2) -1 - turn / 2;
+            int temp = changeIndexRow;
+            changeIndexRow = changeIndexColumn;
+            changeIndexColumn = -temp;
+            turn++;
+        }
+
+        currentRow += changeIndexRow;
+        currentColumn += changeIndexColumn;
+    }
+    PrintArray(numbers);
+}
+
 
 // Задача 61: Задайте две матрицы. 
 // Напишите программу, которая будет находить произведение двух матриц.
@@ -142,32 +184,33 @@ void Task61()
 {
     Console.WriteLine("\n \t Task 61: Matrix multiplication \n");
     Random random = new Random();
-    int rows = random.Next(4, 8);
-    int columns = rows;
+    int rowsFirst = random.Next(4, 8);
+    int columnsFirst = random.Next(4, 8);
+    int rowsSecond = columnsFirst;
+    int columnsSecond = random.Next(4, 8);
 
-    int[,] numbers1 = new int[rows, columns];
-    FillArray(numbers1);
-    int[,] numbers2 = new int[rows, columns];
-    FillArray(numbers2);
+    int[,] firstMatrix = new int[rowsFirst, columnsFirst];
+    FillArray(firstMatrix);
+    int[,] secondMatrix = new int[rowsSecond, columnsSecond];
+    FillArray(secondMatrix);
 
-    int n = numbers1.GetLength(0);
-    int[,] result = new int[n, n];
+    int n = firstMatrix.GetLength(0);
+    int[,] result = new int[rowsFirst, columnsSecond];
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < rowsFirst; i++)
     {
-        for (int j = 0; j < n; j++)
+        for (int j = 0; j < columnsSecond; j++)
         {
-            for (int k = 0; k < n; k++)
+            for (int k = 0; k < rowsFirst; k++)
             {
-                result[i, j] += numbers1[i, k] * numbers2[k, j];
+                result[i, j] += firstMatrix[i, k] * secondMatrix[k, j];
             }
-
         }
     }
     Console.WriteLine("Matrix 1:");
-    PrintArray(numbers1);
+    PrintArray(firstMatrix);
     Console.WriteLine("Matrix 2:");
-    PrintArray(numbers2);
+    PrintArray(secondMatrix);
     Console.WriteLine("Matrix multiplication:");
     PrintArray(result);
 }
@@ -209,4 +252,5 @@ void PrintArray(int[,] numbers)
 Task54();
 Task56();
 Task58();
+Task58_2();
 Task61();
